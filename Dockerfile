@@ -1,7 +1,7 @@
 FROM debian:jessie
 
 # reqired packages
-RUN apt-get update && apt-get install live-build -y --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install live-build nano -y --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 # prepare fs
 RUN mkdir /live-build-scripts
