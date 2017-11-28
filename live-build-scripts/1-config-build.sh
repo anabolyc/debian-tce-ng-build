@@ -36,15 +36,15 @@ export LBX2GO_SPACE='--apt-indices none
 export LBX2GO_DEFAULTS="--backports true
                         --firmware-chroot true
                         --initsystem sysvinit
-			--mode debian
                         --security true
+                        --updates true
                         --distribution $LBX2GO_DEBVERSION"
 
 export LBX2GO_ARCHIVE_AREAS="main contrib non-free"
 
 # This is to optimize squashfs size, based on a suggestion by intrigeri from the TAILS team
 # note that this will permanently change /usr/lib/live/build/binary_rootfs
-sed -i -e 's#MKSQUASHFS_OPTIONS="${MKSQUASHFS_OPTIONS} -comp xz"#MKSQUASHFS_OPTIONS="${MKSQUASHFS_OPTIONS} -comp xz -Xbcj x86 -b 1024K -Xdict-size 1024K"#' /usr/lib/live/build/lb_binary_rootfs
+sed -i -e 's#MKSQUASHFS_OPTIONS="${MKSQUASHFS_OPTIONS} -comp xz"#MKSQUASHFS_OPTIONS="${MKSQUASHFS_OPTIONS} -comp xz -Xbcj x86 -b 1024K -Xdict-size 1024K"#' /usr/lib/live/build/binary_rootfs
 
 # This removes documentation, locales and man pages
 # You can safely enable this if you intend to run X2GoClient in fullscreen mode all the time, or when building the ssh-only rescue image.

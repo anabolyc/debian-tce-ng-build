@@ -1,7 +1,9 @@
 FROM debian:jessie
 
 # reqired packages
-RUN apt-get update && apt-get install live-build nano -y --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && \
+	apt-get install nano cpio genisoimage git-core live-build live-config-doc live-manual-html live-boot-doc -y --no-install-recommends && \
+	rm -rf /var/lib/apt/lists/*
 
 # prepare fs
 RUN mkdir /live-build-scripts
