@@ -38,6 +38,8 @@ export LBX2GO_DEFAULTS="--backports true
                         --initsystem sysvinit
                         --security true
                         --updates true
+			--linux-packages "linux-image linux-headers" 
+			--archive-areas "main contrib"
                         --distribution $LBX2GO_DEBVERSION"
 
 export LBX2GO_ARCHIVE_AREAS="main contrib non-free"
